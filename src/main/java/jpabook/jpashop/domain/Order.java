@@ -1,4 +1,4 @@
-package jpabook.jpashop;
+package jpabook.jpashop.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +24,7 @@ public class Order {
     private Member member;// 주문 회원
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItem> orderItems = new ArrayList<>(); //주문아이템
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_id")
@@ -36,10 +36,10 @@ public class Order {
     private OrderStatus status;
 
     //연관관계 메서드
-//    public void setMember(Member member){
-//        this.member = member;
-//        member.getOrders().add(this);
-//    }
+    public void setMember(Member member){
+        this.member = member;
+        member.getOrders().add(this);
+    }
 
     public void addOrderItem(OrderItem orderItem){
         orderItems.add(orderItem);
