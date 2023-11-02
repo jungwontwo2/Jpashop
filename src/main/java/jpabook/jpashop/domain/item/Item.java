@@ -47,4 +47,6 @@ public abstract class Item {
             throw new NotEnoughStockException("need more stock");}
         this.stockQuantity=restStock;
     }
+
+    //비즈니스 로직//
 }
