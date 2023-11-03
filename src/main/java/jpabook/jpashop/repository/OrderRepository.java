@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -19,4 +20,7 @@ public class OrderRepository {
     public Order findOne(Long id){
         return em.find(Order.class, id);
     }
+//    public List<Order> findAll(OrderSearch orderSearch){
+//
+//    }
 }

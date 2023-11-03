@@ -14,6 +14,7 @@ import jpabook.jpashop.exception.NotEnoughStockException;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
 @Getter
+@Setter
 public abstract class Item {
 
     @Id @GeneratedValue
